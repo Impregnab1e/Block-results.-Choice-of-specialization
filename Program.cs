@@ -10,7 +10,6 @@ int GetDataFromUser(string message)
     return result;
 }
 
-
 string[] ArrayFromUser(int length)
 {
     string[] array = new string[length];
@@ -21,7 +20,6 @@ string[] ArrayFromUser(int length)
     }
     return array;
 }
-
 
 string[] ThreeSymbolArray(string[] array)
 {
@@ -59,7 +57,6 @@ void printArray(string[] array)
     }
     Console.WriteLine("]");
 }
-
 
 int length = GetDataFromUser($"Задайте длину массива");
 string[] FirstArray = ArrayFromUser(length);
