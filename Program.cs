@@ -22,3 +22,51 @@ string[] ArrayFromUser(int length)
     return array;
 }
 
+
+string[] ThreeSymbolArray(string[] array)
+{
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length < 4)
+        {
+            count++;
+        }
+    }
+    string[] newArray = new string[count];
+    int n = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length < 4)
+        {
+            newArray[n] = array[i];
+            n++;
+        }
+    }
+    return newArray;
+}
+
+void printArray(string[] array)
+{
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i]);
+        if (i < array.Length - 1)
+        {
+            Console.Write(",");
+        }
+    }
+    Console.WriteLine("]");
+}
+
+
+int length = GetDataFromUser($"Задайте длину массива");
+string[] FirstArray = ArrayFromUser(length);
+Console.WriteLine("");
+Console.WriteLine("Заданный массив: ");
+printArray(FirstArray);
+string[] FilterTreeSymbolArray = ThreeSymbolArray(FirstArray);
+Console.WriteLine("");
+Console.WriteLine("Массив из строк, длина которых меньше либо равна 3 символа: ");
+printArray(FilterTreeSymbolArray);
